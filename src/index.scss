@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital@0;1&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$dark-text-color: hsl(229, 25%, 31%);
+$score-text-color: hsl(229, 64%, 46%);
+$header-outline: hsl(217, 16%, 45%);
+$scissors-gradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+$paper-gradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+$rock-gradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+$cyan: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+$bg: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+
+.text-dark {
+	color: $dark-text-color;
+}
+
+.score-text-color {
+	color: $score-text-color;
+}
+.header-outline {
+	border-color: $header-outline;
+}
+
+*:not(i) {
+	font-family: "Barlow semi Condensed";
+	font-family: 700;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	height: 100vh;
+	background: $bg;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.bg-scissors {
+	background: $scissors-gradient;
+}
+.bg-paper {
+	background: $paper-gradient;
+}
+.bg-rock {
+	background: $rock-gradient;
+}
+
+.hand-container {
+	padding: 20px;
+	transition-duration: 300ms;
+	background-color: $dark-text-color;
+	box-shadow: inset 0px -6px 2px rgba(0, 0, 0, 0.4);
+
+	&:active {
+		transform: scale(0.95);
+	}
+
+	.image-wrapper {
+		background-color: white;
+		height: 100%;
+		width: 100%;
+		box-shadow: inset 0px 8px 2px rgba(0, 0, 0, 0.2);
+	}
+}
+
+.player-picked {
+	width: 100% !important;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-evenly;
+	.chosen-hand {
+		position: initial !important;
+		transform: scale(1.2);
+	}
+}
+
+.is-choosing {
+}
